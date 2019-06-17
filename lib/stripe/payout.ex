@@ -4,8 +4,4 @@ defmodule Stripe.Payout do
   def endpoint do
     "payouts"
   end
-
-  def all(opts \\ []) do
-    list([], opts)
-  end
 end
