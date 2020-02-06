@@ -1,4 +1,4 @@
-defmodule Stripe.Connect do 
+defmodule StripeElixir.Connect do
   @moduledoc"""
   Functions related to Connect
   """
@@ -13,7 +13,7 @@ defmodule Stripe.Connect do
       |> Keyword.put_new(:client_id, client_id)
       |> Keyword.put_new(:scope, "read_write")
       |> Keyword.put_new(:response_type, "code")
-      |> Stripe.Utils.encode_data()
+      |> StripeElixir.Utils.encode_data()
 
     @oauth_url <> "?" <> query_params
   end
@@ -28,13 +28,13 @@ defmodule Stripe.Connect do
 
       STRIPE_CLIENT_ID=<YOUR_CLIENT_ID>
 
-    You can also pass in client_id option for Stripe.Connect.generate_authorize_url/1
-      Stripe.Connect.authorize_url(client_id: <YOUR_CLIENT_ID>)
+    You can also pass in client_id option for StripeElixir.Connect.generate_authorize_url/1
+      StripeElixir.Connect.authorize_url(client_id: <YOUR_CLIENT_ID>)
   """
 
   defp get_client_id do 
     System.get_env("STRIPE_CLIENT_ID") || 
     Application.get_env(:stripe, :client_id) || 
-    raise Stripe.AuthenticationError, message: @missing_client_id_error_message
+    raise StripeElixir.AuthenticationError, message: @missing_client_id_error_message
   end
 end

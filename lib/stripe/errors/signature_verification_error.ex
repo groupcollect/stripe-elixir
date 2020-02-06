@@ -1,4 +1,4 @@
-defmodule Stripe.SignatureVerificationError do
+defmodule StripeElixir.SignatureVerificationError do
   @moduledoc """
   Failure to verify payload with signature attached to webhook requests.
   """

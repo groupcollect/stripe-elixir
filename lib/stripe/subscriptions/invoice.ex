@@ -1,5 +1,5 @@
-defmodule Stripe.Invoice do
-  use Stripe.API, [:create, :retrieve, :update, :list]
+defmodule StripeElixir.Invoice do
+  use StripeElixir.API, [:create, :retrieve, :update, :list]
 
   def endpoint do
     "invoices"
@@ -10,14 +10,14 @@ defmodule Stripe.Invoice do
   end
 
   def line_items(invoice_id, pagination_opts \\ [], opts \\ []) do
-    Stripe.request(:get, "#{endpoint()}/#{invoice_id}/lines", pagination_opts, opts)
+    StripeElixir.request(:get, "#{endpoint()}/#{invoice_id}/lines", pagination_opts, opts)
   end
 
   def upcoming(data, opts \\ []) do
-    Stripe.request(:get, "#{endpoint()}/upcoming", data, opts)
+    StripeElixir.request(:get, "#{endpoint()}/upcoming", data, opts)
   end
 
   def pay(invoice_id, opts \\ []) do
-    Stripe.request(:post, "#{endpoint()}/#{invoice_id}/pay", [], opts)
+    StripeElixir.request(:post, "#{endpoint()}/#{invoice_id}/pay", [], opts)
   end
 end

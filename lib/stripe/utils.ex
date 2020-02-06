@@ -1,4 +1,4 @@
-defmodule Stripe.Utils do
+defmodule StripeElixir.Utils do
   @moduledoc """
   Utility functions for stripe
   """

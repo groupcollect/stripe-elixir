@@ -1,4 +1,4 @@
-defmodule Stripe.AuthenticationError do
+defmodule StripeElixir.AuthenticationError do
   @moduledoc """
   Failure to properly authenticate yourself in the request.
   """

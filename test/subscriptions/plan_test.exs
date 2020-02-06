@@ -1,7 +1,7 @@
-defmodule Stripe.PlanTest do
+defmodule StripeElixir.PlanTest do
   use ExUnit.Case, async: true
-  alias Stripe.Plan
-  alias Stripe.InvalidRequestError
+  alias StripeElixir.Plan
+  alias StripeElixir.InvalidRequestError
 
   test "create/update/delete a plan" do
     Plan.delete("plan_test")

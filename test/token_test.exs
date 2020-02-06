@@ -1,9 +1,9 @@
-defmodule Stripe.TokenTest do
+defmodule StripeElixir.TokenTest do
   use ExUnit.Case, async: true
 
-  alias Stripe.Fixture.Token, as: TokenFixture
-  alias Stripe.Token
-  alias Stripe.{InvalidRequestError, CardError}
+  alias StripeElixir.Fixture.Token, as: TokenFixture
+  alias StripeElixir.Token
+  alias StripeElixir.{InvalidRequestError, CardError}
 
   test "create a token" do
     assert {:ok, token} = TokenFixture.valid_card() |> Token.create()

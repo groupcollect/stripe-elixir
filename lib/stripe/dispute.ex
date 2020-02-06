@@ -1,5 +1,5 @@
-defmodule Stripe.Dispute do
-  use Stripe.API, [:list, :create, :update]
+defmodule StripeElixir.Dispute do
+  use StripeElixir.API, [:list, :create, :update]
 
   def endpoint do
     "disputes"
@@ -10,6 +10,6 @@ defmodule Stripe.Dispute do
   end
 
   def close(id, opts \\ []) do
-    Stripe.request(:post, close_dispute_endpoint(id), [], opts)
+    StripeElixir.request(:post, close_dispute_endpoint(id), [], opts)
   end
 end

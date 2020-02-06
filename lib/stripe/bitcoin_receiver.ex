@@ -1,5 +1,5 @@
-defmodule Stripe.BitcoinReceiver do
-  use Stripe.API, [:create, :retrieve, :list]
+defmodule StripeElixir.BitcoinReceiver do
+  use StripeElixir.API, [:create, :retrieve, :list]
 
   def endpoint do
     "bitcoin/receivers"

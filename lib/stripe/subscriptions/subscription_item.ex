@@ -1,5 +1,5 @@
-defmodule Stripe.SubscriptionItem do
-  use Stripe.API, [:create, :retrieve, :update, :delete, :list]
+defmodule StripeElixir.SubscriptionItem do
+  use StripeElixir.API, [:create, :retrieve, :update, :delete, :list]
 
   def endpoint do
     "subscription_items"

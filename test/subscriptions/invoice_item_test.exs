@@ -1,6 +1,6 @@
-defmodule Stripe.InvoiceItemTest do
+defmodule StripeElixir.InvoiceItemTest do
   use ExUnit.Case
-  alias Stripe.{Customer, InvoiceItem}
+  alias StripeElixir.{Customer, InvoiceItem}
 
   setup do
     {:ok, customer} = Customer.create([])

@@ -1,5 +1,5 @@
-defmodule Stripe.Event do
-  use Stripe.API, [:retrieve, :list]
+defmodule StripeElixir.Event do
+  use StripeElixir.API, [:retrieve, :list]
 
   def endpoint do
     "events"

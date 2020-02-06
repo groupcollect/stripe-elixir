@@ -1,4 +1,4 @@
-defmodule Stripe.APIConnectionError do
+defmodule StripeElixir.APIConnectionError do
   @moduledoc """
   Failure to connect to Stripe's API.
   """

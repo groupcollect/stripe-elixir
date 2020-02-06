@@ -1,8 +1,8 @@
-defmodule Stripe.BalanceTransactionTest do
+defmodule StripeElixir.BalanceTransactionTest do
   use ExUnit.Case, async: true
 
-  alias Stripe.BalanceTransaction
-  alias Stripe.InvalidRequestError
+  alias StripeElixir.BalanceTransaction
+  alias StripeElixir.InvalidRequestError
 
   test "retrieve a balance transaction" do
     assert {:error, %InvalidRequestError{message: "No such balance transaction: not exist"}}

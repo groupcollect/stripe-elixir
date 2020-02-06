@@ -1,5 +1,5 @@
-defmodule Stripe.Webhook do
-  alias Stripe.SignatureVerificationError
+defmodule StripeElixir.Webhook do
+  alias StripeElixir.SignatureVerificationError
 
   @default_tolerance 300
   @expected_scheme "v1"

@@ -1,4 +1,4 @@
-defmodule Stripe.InvalidRequestError do
+defmodule StripeElixir.InvalidRequestError do
   @moduledoc """
   Invalid request errors arise when your request has invalid parameters.
   """

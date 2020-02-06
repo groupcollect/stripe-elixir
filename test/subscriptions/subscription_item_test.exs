@@ -1,8 +1,8 @@
-defmodule Stripe.SubscriptionItemTest do
+defmodule StripeElixir.SubscriptionItemTest do
   use ExUnit.Case, async: true
-  alias Stripe.{Subscription, SubscriptionItem, Plan, Customer, Token}
-  alias Stripe.InvalidRequestError
-  alias Stripe.Fixture.Token, as: TokenFixture
+  alias StripeElixir.{Subscription, SubscriptionItem, Plan, Customer, Token}
+  alias StripeElixir.InvalidRequestError
+  alias StripeElixir.Fixture.Token, as: TokenFixture
 
   @addon_id "addon_plan"
 

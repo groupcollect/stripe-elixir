@@ -1,7 +1,7 @@
-defmodule Stripe.TransferTest do
+defmodule StripeElixir.TransferTest do
   use ExUnit.Case, async: true
-  alias Stripe.Transfer
-  alias Stripe.InvalidRequestError
+  alias StripeElixir.Transfer
+  alias StripeElixir.InvalidRequestError
 
   test "create a transfer" do
     assert {:error, %InvalidRequestError{param: "destination"}} = Transfer.create(amount: 100,

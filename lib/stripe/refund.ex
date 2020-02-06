@@ -1,5 +1,5 @@
-defmodule Stripe.Refund do
-  use Stripe.API, [:create, :retrieve, :update, :list]
+defmodule StripeElixir.Refund do
+  use StripeElixir.API, [:create, :retrieve, :update, :list]
 
   def endpoint do
     "refunds"

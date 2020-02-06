@@ -1,7 +1,7 @@
-defmodule Stripe.InvoiceTest do
+defmodule StripeElixir.InvoiceTest do
   use ExUnit.Case, async: true
-  alias Stripe.Fixture.Token, as: TokenFixture
-  alias Stripe.{Customer, Token, Invoice, InvoiceItem}
+  alias StripeElixir.Fixture.Token, as: TokenFixture
+  alias StripeElixir.{Customer, Token, Invoice, InvoiceItem}
 
   setup_all do
     {:ok, customer} = Customer.create([])
@@ -42,7 +42,7 @@ defmodule Stripe.InvoiceTest do
   end
 
   test "retrieve upcoming invoices for a customer", %{customer: %{"id" => cus_id}} do
-    assert {:error, %Stripe.InvalidRequestError{message: "No upcoming invoices for customer: " <> ^cus_id}} =
+    assert {:error, %StripeElixir.InvalidRequestError{message: "No upcoming invoices for customer: " <> ^cus_id}} =
       Invoice.upcoming(customer: cus_id)
   end
 end

@@ -1,5 +1,5 @@
-defmodule Stripe.Transfer do
-  use Stripe.API, [:create, :retrieve, :update, :list]
+defmodule StripeElixir.Transfer do
+  use StripeElixir.API, [:create, :retrieve, :update, :list]
 
   def endpoint do
     "transfers"
@@ -10,18 +10,18 @@ defmodule Stripe.Transfer do
   end
 
   def create_reversal(transfer_id, data \\ [], opts \\ []) do
-    Stripe.request(:post, transfer_reversal_endpoint(transfer_id), data, opts)
+    StripeElixir.request(:post, transfer_reversal_endpoint(transfer_id), data, opts)
   end
 
   def retrieve_reversal(transfer_id, reversal_id, opts \\ []) do
-    Stripe.request(:get, transfer_reversal_endpoint(transfer_id, reversal_id), [], opts)
+    StripeElixir.request(:get, transfer_reversal_endpoint(transfer_id, reversal_id), [], opts)
   end
 
   def update_reversal(transfer_id, reversal_id, data, opts \\ []) do
-    Stripe.request(:post, transfer_reversal_endpoint(transfer_id, reversal_id), data, opts)
+    StripeElixir.request(:post, transfer_reversal_endpoint(transfer_id, reversal_id), data, opts)
   end
 
   def list_reversals(transfer_id, pagination_opts, opts \\ []) do
-    Stripe.request(:get, transfer_reversal_endpoint(transfer_id), pagination_opts, opts)
+    StripeElixir.request(:get, transfer_reversal_endpoint(transfer_id), pagination_opts, opts)
   end
 end

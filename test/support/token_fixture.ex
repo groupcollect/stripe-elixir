@@ -1,4 +1,4 @@
-defmodule Stripe.Fixture.Token do
+defmodule StripeElixir.Fixture.Token do
 
   def valid_card() do
     %{card: [

@@ -1,4 +1,4 @@
-defmodule Stripe.RateLimitError do
+defmodule StripeElixir.RateLimitError do
   @moduledoc """
   Too many requests hit the API too quickly.
   """

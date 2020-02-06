@@ -1,6 +1,6 @@
-defmodule Stripe.CouponTest do
+defmodule StripeElixir.CouponTest do
   use ExUnit.Case, async: true
-  alias Stripe.Coupon
+  alias StripeElixir.Coupon
 
   test "create/update/delete a coupon" do
     Coupon.delete("COUPONTEST")

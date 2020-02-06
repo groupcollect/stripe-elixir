@@ -1,5 +1,5 @@
-defmodule Stripe.InvoiceItem do
-  use Stripe.API, [:create, :retrieve, :update, :delete, :list]
+defmodule StripeElixir.InvoiceItem do
+  use StripeElixir.API, [:create, :retrieve, :update, :delete, :list]
 
   def endpoint do
     "invoiceitems"

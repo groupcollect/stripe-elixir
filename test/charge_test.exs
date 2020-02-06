@@ -1,8 +1,8 @@
-defmodule Stripe.ChargeTest do
+defmodule StripeElixir.ChargeTest do
   use ExUnit.Case, async: true
 
-  alias Stripe.Charge
-  alias Stripe.InvalidRequestError
+  alias StripeElixir.Charge
+  alias StripeElixir.InvalidRequestError
 
   test "create a charge" do
     assert {:error, %InvalidRequestError{message: "Must provide source or customer."}}

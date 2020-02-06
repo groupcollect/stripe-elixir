@@ -1,8 +1,8 @@
-defmodule Stripe.RefundTest do
+defmodule StripeElixir.RefundTest do
   use ExUnit.Case, async: true
 
-  alias Stripe.{Token, Charge, Refund}
-  alias Stripe.InvalidRequestError
+  alias StripeElixir.{Token, Charge, Refund}
+  alias StripeElixir.InvalidRequestError
 
   test "create/update a refund" do
     {:ok, token} = Token.create(

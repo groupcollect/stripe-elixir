@@ -1,8 +1,8 @@
-defmodule Stripe.EventTest do
+defmodule StripeElixir.EventTest do
   use ExUnit.Case, async: true
 
-  alias Stripe.Event
-  alias Stripe.InvalidRequestError
+  alias StripeElixir.Event
+  alias StripeElixir.InvalidRequestError
 
   test "retrieve an event" do
     assert {:error, %InvalidRequestError{message: "No such event: not exist"}}

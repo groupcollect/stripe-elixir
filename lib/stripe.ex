@@ -1,4 +1,4 @@
-defmodule Stripe do
+defmodule StripeElixir do
   @moduledoc """
   Main module for handling sending/receiving requests to Stripe's API
   """
@@ -10,7 +10,7 @@ defmodule Stripe do
     @client_version
   end
 
-  alias Stripe.{APIConnectionError,
+  alias StripeElixir.{APIConnectionError,
                 APIError,
                 AuthenticationError,
                 CardError,
@@ -50,7 +50,7 @@ defmodule Stripe do
 
   defp request_url(endpoint, data) do
     base_url = request_url(endpoint)
-    query_params = Stripe.Utils.encode_data(data)
+    query_params = StripeElixir.Utils.encode_data(data)
     "#{base_url}?#{query_params}"
   end
 

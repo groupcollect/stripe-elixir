@@ -1,23 +1,23 @@
-defmodule Stripe.AccountTest do
+defmodule StripeElixir.AccountTest do
   use ExUnit.Case
 
   test "create/update/retrieve/delete an account" do
-    assert {:ok, account} = Stripe.Account.create(type: "custom")
-    assert {:ok, %{"email" => _email}} = Stripe.Account.retrieve(account["id"])
+    assert {:ok, account} = StripeElixir.Account.create(type: "custom")
+    assert {:ok, %{"email" => _email}} = StripeElixir.Account.retrieve(account["id"])
     assert {:ok, %{"metadata" => %{"test" => "data"}}} =
-      Stripe.Account.update(account["id"], metadata: [test: "data"])
-    assert {:ok, _} = Stripe.Account.delete(account["id"])
-    assert {:error, _} = Stripe.Account.retrieve(account["id"])
+      StripeElixir.Account.update(account["id"], metadata: [test: "data"])
+    assert {:ok, _} = StripeElixir.Account.delete(account["id"])
+    assert {:error, _} = StripeElixir.Account.retrieve(account["id"])
   end
 
   test "list all accounts" do
-    assert {:ok, %{"object" => "list", "url" => "/v1/accounts"}} = Stripe.Account.list
+    assert {:ok, %{"object" => "list", "url" => "/v1/accounts"}} = StripeElixir.Account.list
   end
 
   test "create/update/retrieve/delete/list an external_account" do
-    {:ok, account} = Stripe.Account.create(type: "custom")
+    {:ok, account} = StripeElixir.Account.create(type: "custom")
 
-    {:ok, token} = Stripe.Token.create(
+    {:ok, token} = StripeElixir.Token.create(
       card: [
         number: "4000056655665556",
         exp_month: 7,
@@ -27,7 +27,7 @@ defmodule Stripe.AccountTest do
       ]
     )
 
-    {:ok, token2} = Stripe.Token.create(
+    {:ok, token2} = StripeElixir.Token.create(
       card: [
         number: "5200828282828210",
         exp_month: 7,
@@ -40,22 +40,22 @@ defmodule Stripe.AccountTest do
     account_id = account["id"]
 
     assert {:ok, external_account} =
-      Stripe.Account.create_external_account(account_id, external_account: token["id"])
+      StripeElixir.Account.create_external_account(account_id, external_account: token["id"])
     assert {:ok, external_account2} =
-      Stripe.Account.create_external_account(account_id, external_account: token2["id"])
+      StripeElixir.Account.create_external_account(account_id, external_account: token2["id"])
 
     url = "/v1/accounts/#{account_id}/external_accounts"
 
     assert {:ok, %{"object" => "list", "url" => ^url}}
-      = Stripe.Account.list_external_account(account_id)
+      = StripeElixir.Account.list_external_account(account_id)
 
     external_account_id = external_account["id"]
     external_account_id2 = external_account2["id"]
 
-    assert {:ok, ^external_account} = Stripe.Account.retrieve_external_account(account_id, external_account_id)
+    assert {:ok, ^external_account} = StripeElixir.Account.retrieve_external_account(account_id, external_account_id)
     assert {:ok, %{"metadata" => %{"test" => "data"}}} =
-      Stripe.Account.update_external_account(account_id, external_account_id, metadata: [test: "data"])
-    assert {:ok, _} = Stripe.Account.delete_external_account(account_id, external_account_id2)
-    assert {:error, _} = Stripe.Account.retrieve_external_account(account_id, external_account_id2)
+      StripeElixir.Account.update_external_account(account_id, external_account_id, metadata: [test: "data"])
+    assert {:ok, _} = StripeElixir.Account.delete_external_account(account_id, external_account_id2)
+    assert {:error, _} = StripeElixir.Account.retrieve_external_account(account_id, external_account_id2)
   end
 end

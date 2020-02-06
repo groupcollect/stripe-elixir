@@ -1,9 +1,9 @@
-defmodule Stripe.SubscriptionTest do
+defmodule StripeElixir.SubscriptionTest do
   use ExUnit.Case, async: true
 
-  alias Stripe.Fixture.Token, as: TokenFixture
-  alias Stripe.{Subscription, Plan, Customer, Token}
-  alias Stripe.InvalidRequestError
+  alias StripeElixir.Fixture.Token, as: TokenFixture
+  alias StripeElixir.{Subscription, Plan, Customer, Token}
+  alias StripeElixir.InvalidRequestError
 
   setup do
     {:ok, customer} = Customer.create([])

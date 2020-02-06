@@ -1,9 +1,9 @@
-defmodule Stripe.CustomerTest do
+defmodule StripeElixir.CustomerTest do
   use ExUnit.Case, async: true
   
-  alias Stripe.Fixture.Token, as: TokenFixture
-  alias Stripe.{Customer, Token}
-  alias Stripe.InvalidRequestError
+  alias StripeElixir.Fixture.Token, as: TokenFixture
+  alias StripeElixir.{Customer, Token}
+  alias StripeElixir.InvalidRequestError
 
   setup do
     assert {:ok, customer} = Customer.create([])

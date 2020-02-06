@@ -1,4 +1,4 @@
-defmodule Stripe.Mixfile do
+defmodule StripeElixir.Mixfile do
   use Mix.Project
 
   @version "0.8.1"
