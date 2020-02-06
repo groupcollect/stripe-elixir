@@ -18,3 +18,8 @@ erl_crash.dump
 
 # Mac artifact
 .DS_Store
+
+.envrc
+.idea/
+.tool-versions
+stripe.iml
