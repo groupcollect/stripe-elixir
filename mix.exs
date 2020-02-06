@@ -4,7 +4,7 @@ defmodule StripeElixir.Mixfile do
   @version "0.8.1"
 
   def project do
-    [app: :stripe,
+    [app: :stripe_elixir,
      version: @version,
      elixir: "~> 1.5",
      build_embedded: Mix.env == :prod,
